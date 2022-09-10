@@ -1,0 +1,30 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    
+}
+.container{
+    display: flex;
+    gap: 50px;
+
+}
+
+#descripciones{
+    width: 300px;
+    
+}
+#descripciones div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.opciones{
+    display: flex;
+    gap: 25px;
+}
+
+i{
+    cursor: pointer;
+}
