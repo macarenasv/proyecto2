@@ -4,11 +4,22 @@ let form = document.getElementById("form");
 let input = document.getElementById("input");
 let descripciones = document.getElementById("descripciones");
 
+let parque = document.getElementById("nombreParque");
+let fecha = document.getElementById("fecha");
+let planes = document.getElementById("planes");
+
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
     console.log("button")
     botonEnviar();
 })
+
+
+ var agrega = getElementById("agregar");
+
+ agrega.addEventListener(click, guardarDescripcion)
+
+
 
 let botonEnviar = () =>{
     if(input.value === ""){
@@ -20,14 +31,21 @@ let botonEnviar = () =>{
     }
 };
 
-let descripcion = {};
+
 
 let guardarDescripcion = ()=> {
-    descripcion["texto"] = input.value;
-    console.log(descripcion);
-    crearDescripcion();
+    const descripcion = {
+        parque: parque.value,
+        fecha: fecha.value,
+        planes: planes.value, 
+    }
+    console.log(parque.value);
+
+    };
     
-};
+    // crearDescripcion();
+    
+
 
 let crearDescripcion = () => {
     descripciones.innerHTML += 
