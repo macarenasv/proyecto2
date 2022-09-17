@@ -69,21 +69,6 @@ body {
     gap: 50px;
 
 }
-/* 
-#descripciones {
-    display: grid;
-    margin-left: 0px;
-    gap: 15px;
-
-
-}
-
-#descripciones div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- */
-
 
 label,
 input {
@@ -111,9 +96,8 @@ label {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-   
     
-
+   
 }
 
 i {
