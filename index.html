@@ -2,85 +2,164 @@
 <html lang="es">
 
 <head>
-    <title>Proyecto CRUD </title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7c75acec2d.js" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto CRUD </title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <link href="style.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <h1>Organización Semanal</h1>
 
-    <div class="container">
-        <div class="left">
-            <!-- <form id="form">
-                <label for="dia">Fecha</label>
-                <br>
-                <input name="Día" id="dia" type="date"></input>
-                <!-- Se necesita boton? -->
-            <br>
+  <header>
+    <nav class="fuente navbar">
+      <div>
+        <a class="navbar-brand" href="#"></a>
+        <img class="logo img-responsive p-3" src="/img/logo.png" width="100 px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse p-3" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Servicios</a>
+            </li>
 
-            <form id="form">
-                <label for="nombreParque">Elige tu Parque o Actividad:</label>
-                <br>
-                <select id="nombreParque" name="nombreParque">
-                    <option value=""></option>
-                    <option value="mk">Magic Kingdom</option>
-                    <option value="hs">Hollywood Studios</option>
-                    <option value="ak">Animal Kingdom</option>
-                    <option value="ep">Epcot</option>
-                    <option value="us">Universal Studios</option>
-                    <option value="ia">Universal's Island of Adventures</option>
-                    <option value="des">Día de Descanso</option>
-                    <option value="shop">Día de Shopping</option>
-                </select>
-                <br>
-                <label for="fecha">Fecha</label>
-                <br>
-                <input type="date" id="fecha">
-                <br>
-                <label for="planes">Escribe tus planes aquí:</label>
-                <br>
-                <textarea name="planes" id="planes" cols="30" rows="10"></textarea>
-                <br>
-                <button id="agregar" type="submit">Enviar</button>
-            </form>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Destinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">¿Quién soy?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Organiza tu Viaje</a>
+            </li>
+          </ul>
         </div>
-        <div class="right">
-            <h3>Tu semana</h3>
-            <div id="descripciones">
-                <div>
-                    <p>Parque</p>
-                    <p>Fecha</p>
-                    <p>Descripción</p>
-                    <span class="opciones">
-                        <i onClick="editarDescripcion(this)" class="fa-solid fa-pen"></i>
-                        <i onClick="borrarDescripcion(this)" class="fa-solid fa-trash-can"></i>
-                    </span>
-                </div>
+      </div>
+    </nav>
+  </header>
 
-                <div>
-                    <p>Tarea2</p>
-                    <span class="opciones">
-                        <i onClick="editarDescripcion(this)" class="fa-solid fa-pen"></i>
-                        <i onClick="borrarDescripcion(this)" class="fa-solid fa-trash-can"></i>
-                    </span>
-                </div>
-                <div>
-                    <p>Tarea3</p>
-                    <span class="opciones">
-                        <i onClick="editarDescripcion(this)" class="fa-solid fa-pen"></i>
-                        <i onClick="borrarDescripcion(this)" class="fa-solid fa-trash-can"></i>
-                    </span>
-                </div>
+  <main>
 
-
-            </div>
-        </div>
+    <div class="titulo">
+      <h1>Organiza tu viaje</h1>
+      <img src="/img/bullet.png" width=45px>
     </div>
 
-    <script src="main.js"> </script>
+    <div class="container">
+      <div class="left noprint">
+
+        <br>
+
+        <form id="form">
+          <label for="nombreParque">Elige tu Parque o Actividad:</label>
+          <br>
+          <select id="nombreParque" name="nombreParque">
+            <option value=""></option>
+            <option value="Magic Kingdom">Magic Kingdom</option>
+            <option value="Hollywood Studios">Hollywood Studios</option>
+            <option value="Animal Kingdom">Animal Kingdom</option>
+            <option value="Epcot">Epcot</option>
+            <option value="Universal Studios">Universal Studios</option>
+            <option value="Universal's Island of Adventures">Universal's Island of Adventures</option>
+            <option value="Parque de Agua">Parque de Agua</option>
+            <option value="Día de Viaje">Día de Viaje</option>
+            <option value="Día de Descanso">Día de Descanso</option>
+            <option value="Día de Shopping">Día de Shopping</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <br>
+          <label for="fecha">Fecha:</label>
+          <br>
+          <input type="date" id="fecha">
+          <br>
+          <label for="planes">Escribe tus planes aquí:</label>
+          <br>
+          <textarea name="planes" id="planes" cols="20" rows="5"></textarea>
+          <br>
+          <button id="agregar" type="submit" class="btn btn-outline-warning">Enviar</button>
+          <button id="actualizar" type="submit" class="btn btn-outline-warning">Actualizar</button>
+        </form>
+      </div>
+      <div class="right">
+        <div class="titulo mb-5">
+          <h3>Tu semana</h3>
+        </div>
+        <div class="caja mb-5">
+
+          <div class= "" id="descripciones">
+            
+          
+
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <section class="containerfootercompleto p-0 m-0">
+      
+        <div class="pie">
+          <div class="p-1">
+            <a href="#">Servicios</a>
+          </div>
+          <div class="p-1">
+            <img src="/img/bullet.png" width=45px>
+          </div>
+          <div class="p-1">
+            <a href="#">Destinos</a>
+          </div>
+
+          <div class="p-1">
+            <img src="/img/bullet.png" width=45px>
+          </div>
+          <div class="p-1">
+            <a href="#">¿Quien Soy?</a>
+          </div>
+          <div class="p-1">
+            <img src="/img/bullet.png" width=45px>
+          </div>
+          <div class="p-1">
+            <a href="#">Organiza tu Viaje</a>
+          </div>
+        </div>
+
+
+        <div class="redes container-fluid">
+
+        <div>
+          <a href="#" target="_blank"> <i class="fa-brands fa-facebook-f fa-2x p-3"></i> </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/destinomagico.cl" target="_blank"> <i
+              class="fa-brands fa-instagram p-3 fa-2x"> </i> </a>
+        </div>
+        <div>
+          <a href="#" target="_blank"> <i class="fa-brands fa-tiktok p-3 fa-2x"></i> </a>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <script src="main.js"> </script>
+
+  <script src="https://kit.fontawesome.com/7c75acec2d.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
